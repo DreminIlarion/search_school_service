@@ -1,0 +1,111 @@
+/* Устанавливаем стили для body и html, чтобы убрать белые полосы */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Убираем прокрутку */
+    box-sizing: border-box; /* Гарантируем корректное поведение размеров */
+  }
+  
+  /* Контейнер с градиентом */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Покрываем всю высоту экрана */
+    width: 100vw; /* Покрываем всю ширину экрана */
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Градиент */
+    overflow: hidden; /* Убираем прокрутку внутри контейнера */
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Блок поиска */
+  .searchBox {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Максимальная ширина формы */
+    min-width: 500px; /* Минимальная ширина формы */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Поле ввода */
+  .input {
+    width: 100%; /* Растягиваем на ширину контейнера */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    background: white;
+  }
+  
+  .input:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Список подсказок */
+  .suggestions {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* Подсказка */
+  .suggestion {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .suggestion:hover {
+    background: #f0f0f0;
+  }
+  
+  /* Лоадер (индикатор загрузки) */
+  .loader {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-top: 3px solid #333;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Детали выбранной школы */
+  .details {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+  }
+  
