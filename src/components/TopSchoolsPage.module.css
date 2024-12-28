@@ -1,0 +1,231 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  /* TopSchoolsPage.module.css */
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); /* Блоки адаптируются под ширину экрана */
+    gap: 30px; /* Отступы между блоками */
+    margin-top: 20px;
+  }
+  
+  .block {
+    overflow-x: hidden;
+    background-color: #ffffff; /* Тёмный фон для блоков */
+    border-radius: 8px;
+    
+    border: 1px solid #444; /* Обводка */
+    text-align: center;
+    min-height: 400px; /* Минимальная высота для каждого блока */
+    overflow: hidden;
+  }
+  
+  .block h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Увеличиваем размер заголовка */
+  }
+  
+  /* Стили для таблицы */
+  .dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .dataTable th,
+  .dataTable td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .dataTable th {
+    background-color: #f4f4f4;
+    font-size: 1.1rem;
+  }
+  
+  .dataTable td {
+    font-size: 1rem;
+  }
+  
+  /* Для выравнивания колонок */
+  .schoolId, .schoolName, .schoolCount, .schoolScore, .schoolGpa, .schoolStudents {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .schoolCount,
+  .schoolScore,
+  .schoolGpa,
+  .schoolStudents {
+    text-align: right;
+  }
+  .selected {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  .dataTable tr:hover {
+    background-color: #e0e0e0;
+  }
+
+  /* Основной контейнер для метрик */
+.metricsContainer {
+    
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Название школы */
+  .schoolName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* ID школы */
+  .schoolInfo {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Кнопка "Назад" */
+  .backButton {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  .backButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .backButton:active {
+    background-color: #003d80;
+  }
+  
+ /* Общая структура */
+.metricsGrid {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Карточки */
+  .metricCard {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .metricCard h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .metricCard p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Диаграмма */
+  .pieChartSection {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .pieChartSection h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Секции с популярными элементами */
+  .listsSection {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .listsSection > div {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .listsSection h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .listsSection ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listsSection li {
+    font-size: 16px;
+    padding: 4px 0;
+  }
+  
+  
+  .showStudentsButton {
+    background-color: #4CAF50; /* Зеленый цвет для кнопки */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Внутренние отступы для комфорта */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    border: none; /* Без рамок */
+    border-radius: 8px; /* Скругленные углы */
+    cursor: pointer; /* Курсор "рука" */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Легкая тень */
+    transition: all 0.3s ease; /* Плавный переход эффектов */
+  }
+  
+  .showStudentsButton:hover {
+    background-color: #45a049; /* Более темный оттенок зеленого при наведении */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+  }
+  
+  .showStudentsButton:active {
+    background-color: #3e8e41; /* Еще более темный оттенок зеленого при нажатии */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Уменьшенная тень */
+    transform: translateY(2px); /* Легкое смещение вниз */
+  }

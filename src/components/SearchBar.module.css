@@ -1,7 +1,7 @@
 /* Глобальные стили */
 body, html {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
   height: 100%;
@@ -12,7 +12,7 @@ body, html {
 /* Основной контейнер */
 .container {
   margin: 0 auto;
-  padding: 16px;
+  padding: 6px;
   overflow-x: hidden;
 
   display: flex;
@@ -31,7 +31,7 @@ body, html {
 
   /* background: linear-gradient(135deg, #72edf2, #5151e5); */
   font-family: "Roboto", sans-serif;
-  padding-top: 60px;
+  
   box-sizing: border-box;
 }
 
@@ -40,17 +40,18 @@ body, html {
   font-size: 48px;
   color: #3b9ee9;
   text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
-  margin-bottom: 40px;
+  white-space: nowrap;
   font-weight: bold;
   text-align: center;
+  margin: 40px;
 }
 
 /* Форма поиска */
 .searchBox {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  min-width: 300px;
+  max-width: 800px;
+  
   padding: 20px;
   box-sizing: border-box;
   
@@ -58,21 +59,34 @@ body, html {
   
 }
 
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 600px;
+  
+  gap:10px;
+  /* padding-left: 70px; */
+}
 /* Поле ввода */
 .input {
-  width: 100%;
-  padding: 15px 20px;
+  padding-left: 30px;
+  flex: 1; /* Занимает оставшееся пространство */
+  padding: 15px 35px;
   border: 1px solid #ccc;
-  border-radius: 25px;
+  border-radius: 25px; /* Скругление только слева */
   outline: none;
   font-size: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .input:focus {
-  border-color: #36a2eb;
-  box-shadow: 0 6px 12px rgba(54, 162, 235, 0.2);
+  border-color: #007bff; /* Синий цвет при фокусе */
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+  outline: none;
 }
 
 /* Список подсказок */
@@ -124,14 +138,14 @@ body, html {
 
 /* Детали выбранной школы */
 .details {
-  margin-top: 30px;
+  
   background: white;
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   text-align: left;
-  width: 100%;
-  max-width: 650px;
+  width: 97%;
+  
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -147,78 +161,218 @@ body, html {
   font-size: 16px;
   line-height: 1.5;
   color: #000000;
-}
+} 
 
 /* Метрики */
 .metrics {
-  padding: 16px;
+  display: flex;
+  flex-direction: row; /* Горизонтально по умолчанию */
+  justify-content: space-between;
+  gap: 16px;
   background-color: #ffffff;
-  border-radius: 12px;
-  margin-top: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 300px;
+  
+  box-sizing: border-box;
 }
 
-.metrics h3 {
-  margin-bottom: 16px;
-  font-size: 18px;
-  color: #000000;
+.metrics p {
+  flex: 1; /* Чтобы все группы занимали равное пространство */
+  margin: 8px;
+ 
 }
 
+@media (max-width: 768px) {
+  .metrics {
+    flex-direction: column; /* Переход на колонку */
+    align-items: flex-start; /* Выровнять элементы по началу */
+  }
+  
+
+  /* .searchBox {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+  } */
+
+   
+
+  /* .title {
+    font-size: 38px;
+  } */
+
+  .metrics p {
+    width: 100%; /* Группы занимают всю ширину */
+    margin: 0 0 16px 0; /* Отступы между группами */
+  }
+  canvas {
+    margin: 0 auto;
+    display: block;
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
 canvas {
   margin: 0 auto;
   display: block;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 350px;
+  max-height: 350px;
 }
 
-.metrics ul {
+/* .metrics ul {
   padding-left: 16px;
 }
 
 .metrics li {
   margin: 4px 0;
   color: #000000;
-}
+} */
 
-/* Кнопка возврата */
-.backButton {
-  margin-top: 24px;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #36a2eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
-.backButton:hover {
+
+
+.restButton:hover {
   background-color: #1d88c1;
-  transform: scale(1.05);
 }
-
-.backButton:active {
-  transform: scale(0.98);
-}
-
-.restButton {
-  margin-top: 24px;
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #36a2eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-
 
 .restButton:active {
   transform: scale(0.98);
+}
+
+.navbar {
+  background-color: #33333300;
+  
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0 15px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #ddd;
+}
+
+.filter {
+  padding: 8px;
+    
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+}
+.filter::after { 
+  content: attr(data-title); 
+ }
+.filter:hover {
+  border-color: #007bff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный чёрный фон */
+  z-index: 10; /* Поверх контента сайта */
+  transition: opacity 0.3s ease; /* Плавное появление */
+}
+
+.searchIcon {
+  position: absolute;
+  left: 13px;
+  font-size: 18px;
+  color: #aaa;
+}
+
+/* Контейнер поиска */
+.searchBox {
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Список подсказок * отодвигает ниднбюю панель/
+/* .suggestions {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion:hover {
+  background-color: #f1f1f1;
+} */
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.block {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.block h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.block ul li {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
 }

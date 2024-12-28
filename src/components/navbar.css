@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #33333300;
+    
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navList {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    margin: 0 15px;
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .navLink:hover {
+    color: #ddd;
+  }
+  
+  .title {
+    font-size: 48px;
+    color: #3b9ee9;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px;
+  }
